@@ -1,6 +1,6 @@
 ### * Get a single note
 
-GET http://localhost:3001/api/notes/5
+GET http://localhost:3001/api/notes/64107a55db5aed89b05c5220
 
 ### * Get all notes
 
@@ -16,6 +16,6 @@ POST http://localhost:3001/api/notes/
 Content-Type: application/json
 
 {
-    "content": "Postman is good in the backend",
-    "important": true,
+    "content": "Whats up big dawg", 
+    "important": true  
 }
