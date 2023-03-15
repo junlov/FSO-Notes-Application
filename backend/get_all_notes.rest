@@ -19,3 +19,13 @@ Content-Type: application/json
     "content": "Whats up big dawg", 
     "important": true  
 }
+
+### * Update a note
+
+PUT http://localhost:3001/api/notes/6410ab578b0f4ef63b58da56
+Content-Type: application/json
+
+{
+    "content": "Hey there honey",
+    "important": false
+}
