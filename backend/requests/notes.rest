@@ -14,10 +14,11 @@ DELETE http://localhost:3001/api/notes/4
 
 POST http://localhost:3001/api/notes/
 Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkJhYnlCYWNrUmlicyIsImlkIjoiNjQxZGJkYmUyOTYwOGE3ZDlhMDU3ODc5IiwiaWF0IjoxNjc5Njc1ODQxfQ.04uAN2bjv_CFZC4K1Xu39DNDSOmEBeMbaMAkWEHQygU
 
 {
-    "content": "lol", 
-    "important": true  
+    "content": "I want to win! I deserve it!", 
+    "important": false
 }
 
 ### * Update a note
