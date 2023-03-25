@@ -10,7 +10,6 @@ import NoteForm from './components/NoteForm'
 
 const App = ({ props }) => {
   const [notes, setNotes] = useState([])
-  // const [newNote, setNewNote] = useState('')
   const [showAll, setShowAll] = useState(true)
   const [errorMessage, setErrorMessage] = useState(null)
   const [username, setUsername] = useState('')
@@ -19,10 +18,11 @@ const App = ({ props }) => {
   const [loginVisible, setLoginVisible] = useState(false)
   const noteFormRef = useRef()
 
-  useEffect(() => {
-    noteService.getAll().then((initialNotes) => setNotes(initialNotes))
-  }, [])
-
+  //
+  //
+  // * Login Section
+  //
+  //
   useEffect(() => {
     const loggedUserJSON = window.localStorage.getItem('loggedNoteappUser')
     if (loggedUserJSON) {
@@ -31,29 +31,6 @@ const App = ({ props }) => {
       noteService.setToken(user.token)
     }
   }, [])
-
-  const toggleImportanceOf = (id) => {
-    const note = notes.find((n) => n.id === id)
-    const changedNote = { ...note, important: !note.important }
-
-    noteService
-      .update(id, changedNote)
-      .then((returnedNote) => {
-        setNotes(notes.map((note) => (note.id !== id ? note : returnedNote)))
-      })
-      .catch((error) => {
-        setErrorMessage(
-          `Note '${note.content}' was already removed from server`
-        )
-        setTimeout(() => {
-          setErrorMessage(null)
-        }, 5000)
-        setNotes(notes.filter((n) => n.id !== id))
-      })
-  }
-
-  //Render
-  // console.log('render', notes.length, 'notes')
 
   const handleLogin = async (event) => {
     event.preventDefault()
@@ -71,12 +48,6 @@ const App = ({ props }) => {
         setErrorMessage(null)
       }, 5000)
     }
-  }
-
-  const addNote = (noteObject) => {
-    noteService.create(noteObject).then((returnedNote) => {
-      setNotes(notes.concat(returnedNote))
-    })
   }
 
   const loginForm = () => {
@@ -100,6 +71,42 @@ const App = ({ props }) => {
         </div>
       </div>
     )
+  }
+
+  //
+  //
+  // * Note Service Section
+  //
+  //
+  useEffect(() => {
+    noteService.getAll().then((initialNotes) => setNotes(initialNotes))
+  }, [])
+
+  const toggleImportanceOf = (id) => {
+    const note = notes.find((n) => n.id === id)
+    const changedNote = { ...note, important: !note.important }
+
+    noteService
+      .update(id, changedNote)
+      .then((returnedNote) => {
+        setNotes(notes.map((note) => (note.id !== id ? note : returnedNote)))
+      })
+      .catch((error) => {
+        setErrorMessage(
+          `Note '${note.content}' was already removed from server`
+        )
+        setTimeout(() => {
+          setErrorMessage(null)
+        }, 5000)
+        setNotes(notes.filter((n) => n.id !== id))
+      })
+  }
+
+  const addNote = (noteObject) => {
+    noteFormRef.current.toggleVisibility()
+    noteService.create(noteObject).then((returnedNote) => {
+      setNotes(notes.concat(returnedNote))
+    })
   }
 
   const noteForm = () => (
