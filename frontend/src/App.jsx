@@ -121,7 +121,18 @@ const App = ({ props }) => {
 
   return (
     <div className="container">
-      <h1>Notes</h1>
+      <header className="header">
+        <h1 className="header__title">
+          Note-
+          <span className="header__colorful">o</span>
+          -pia
+        </h1>
+
+        <h2 className="header__secondary-title">
+          Welcome to Notepia - where all notes live in peace!
+        </h2>
+      </header>
+
       <Notification message={errorMessage} />
 
       {!user && loginForm()}
