@@ -1,12 +1,12 @@
 import React from 'react'
-import Note from './components/Note'
+import Note from './components/Notes/Note'
 import { useState, useEffect, useRef } from 'react'
 import noteService from './services/notes'
 import Notification from './components/Notification'
 import loginService from './services/login'
 import LoginForm from './components/LoginForm'
 import Togglable from './components/Togglable'
-import NoteForm from './components/NoteForm'
+import NoteForm from './components/Notes/NoteForm'
 
 const App = ({ props }) => {
   const [notes, setNotes] = useState([])

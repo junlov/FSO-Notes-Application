@@ -1,12 +1,54 @@
+* > * {
+  padding: 0;
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  box-sizing: border-box;
+}
+
 h1 {
   color: yellowgreen;
   font-style: italic;
 }
 
-.note {
-  color: grey;
+.Note {
+  list-style: none;
+  background-color: #f1faee;
+  color: #457b9d;
+  font-weight: 400;
+  margin: 15px;
+  border-radius: 15px;
+  box-shadow: 5px 5px 10px #bfd1ca;
+  padding: 10px;
   padding-top: 5px;
   font-size: 15px;
+  width: 150px;
+  height: 200px;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+.Note__body {
+  padding: 20px;
+  padding-bottom: 10px;
+}
+.Note__toggle {
+  color: #fafafa;
+  border: none;
+  border-radius: 8px;
+  padding: 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 900;
+}
+.Note__toggle--important {
+  background-color: #457b9d;
+}
+.Note__toggle--notimportant {
+  background-color: #ffd60a;
+  color: #457b9d;
 }
 
 .error {

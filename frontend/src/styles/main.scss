@@ -1,12 +1,74 @@
+$primary-color: #a8dadc;
+$primary-color-dark: #457b9d;
+$primary-color-light: #f1faee;
+
+$secondary-color: #ffc300;
+$secondary-color-light: #ffd60a;
+
+$font-color: #fafafa;
+
+* > * {
+  padding: 0;
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  box-sizing: border-box;
+}
+
 h1 {
   color: yellowgreen;
   font-style: italic;
 }
 
-.note {
-  color: grey;
+.Note {
+  list-style: none;
+  background-color: $primary-color-light;
+  color: $primary-color-dark;
+  font-weight: 400;
+
+  margin: 15px;
+
+  border-radius: 15px;
+  box-shadow: 5px 5px 10px #bfd1ca;
+
+  padding: 10px;
   padding-top: 5px;
   font-size: 15px;
+
+  width: 150px;
+  height: 200px;
+
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+
+  &__body {
+    padding: 20px;
+    padding-bottom: 10px;
+  }
+
+  &__toggle {
+    color: $font-color;
+
+    border: none;
+    border-radius: 8px;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+
+    font-size: 12px;
+    font-weight: 900;
+
+    &--important {
+      background-color: $primary-color-dark;
+    }
+
+    &--notimportant {
+      background-color: $secondary-color-light;
+      color: $primary-color-dark;
+    }
+  }
 }
 
 .error {
