@@ -1,24 +1,3 @@
-$primary-color: #a8dadc;
-$primary-color-dark: #457b9d;
-$primary-color-light: #f1faee;
-
-$secondary-color: #ffc300;
-$secondary-color-light: #ffd60a;
-
-$font-color: #fafafa;
-
-* > * {
-  padding: 0;
-  margin: 0;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  box-sizing: border-box;
-}
-
-h1 {
-  color: yellowgreen;
-  font-style: italic;
-}
-
 .Note {
   list-style: none;
   background-color: $primary-color-light;
@@ -69,14 +48,4 @@ h1 {
       color: $primary-color-dark;
     }
   }
-}
-
-.error {
-  color: orangered;
-  background: lightgrey;
-  font-size: 20px;
-  border-style: solid;
-  border-radius: 5px;
-  padding: 10px;
-  margin-bottom: 10px;
 }

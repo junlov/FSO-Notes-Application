@@ -2,10 +2,10 @@ import React from 'react'
 import Note from './components/Notes/Note'
 import { useState, useEffect, useRef } from 'react'
 import noteService from './services/notes'
-import Notification from './components/Notification'
+import Notification from './components/Notification/Notification'
 import loginService from './services/login'
-import LoginForm from './components/LoginForm'
-import Togglable from './components/Togglable'
+import LoginForm from './components/Login/LoginForm'
+import Togglable from './components/Toggle/Togglable'
 import NoteForm from './components/Notes/NoteForm'
 
 const App = ({ props }) => {
@@ -120,7 +120,7 @@ const App = ({ props }) => {
   const notesToShow = showAll ? notes : notes.filter((note) => note.important)
 
   return (
-    <>
+    <div className="container">
       <h1>Notes</h1>
       <Notification message={errorMessage} />
 
@@ -155,7 +155,7 @@ const App = ({ props }) => {
           />
         ))}
       </ul>
-    </>
+    </div>
   )
 }
 
